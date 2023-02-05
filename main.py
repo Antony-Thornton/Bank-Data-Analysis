@@ -8,3 +8,5 @@ def test(df):
 
 
 df = Data.get_data.create_data_frame()
+
+test(df)
