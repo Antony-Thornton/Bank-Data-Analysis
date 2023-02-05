@@ -20,4 +20,4 @@ def create_data_frame():
 
     return df
 
-create_data_frame()
+# create_data_frame()
