@@ -1,12 +1,14 @@
-import pandas
+# Import libraries
 import pandas as pd
 import matplotlib.pyplot as plt
-from itertools import cycle, islice
 
+# Import scripts
 import Data.get_data
 
+
+# Functions
 def bar_chart(df):
-    print("Printing a bar chart showing bank balance by marital status.")
+    print("Printing a bar chart showing bank balance by marital status.", end='\n\n')
 
     df = df[['housing', 'marital', 'balance']]
 
@@ -17,11 +19,11 @@ def bar_chart(df):
     plt.ylabel("Balance")
     plt.show()
 
-
     return df
 
-def line_graph(df):
 
+def line_graph(df):
+    print("Printing a bar chart showing bank balance by marital status.", end='\n\n')
     df = df[['age', 'balance']]
 
     pd.pivot_table(df, values='balance', index='age').plot(kind='line')
@@ -30,7 +32,6 @@ def line_graph(df):
     plt.xlabel("Age")
     plt.ylabel("Balance")
     plt.show()
-
 
 
 def all_def():
