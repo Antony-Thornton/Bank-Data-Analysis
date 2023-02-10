@@ -5,8 +5,8 @@ from itertools import cycle, islice
 
 import Data.get_data
 
-def create_chart_test(df):
-    print("Printing a bar chart of all ")
+def bar_chart(df):
+    print("Printing a bar chart showing bank balance by marital status.")
 
     df = df[['housing', 'marital', 'balance']]
 
@@ -20,13 +20,22 @@ def create_chart_test(df):
 
     return df
 
-def test():
-    print("Successfully ran both functions")
+def line_graph(df):
+
+    df = df[['age', 'balance']]
+
+    pd.pivot_table(df, values='balance', index='age').plot(kind='line')
+
+    plt.title("Bank balance by age")
+    plt.xlabel("Age")
+    plt.ylabel("Balance")
+    plt.show()
+
 
 
 def all_def():
-    create_chart_test(df)
-    test()
+    bar_chart(df)
+    line_graph(df)
 
 
 df = Data.get_data.create_data_frame()
